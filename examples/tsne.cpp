@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "tsne.h"  // 假设 tsne.h 在同一目录下
+#include "ddr.hpp"
 
 int main() {
     // 假设我们有一个简单的 6 个样本，每个样本是 3 维的输入数据（N=6, D=3）

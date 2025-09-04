@@ -144,10 +144,11 @@ void TSNE::run(double* X, int N, int D, double* Y, int no_dims, double perplexit
             double C = .0;
             if(exact) C = evaluateError(P, Y, N);
             else      C = evaluateError(row_P, col_P, val_P, Y, N, theta);  // doing approximate computation here!
-            if(iter == 0)
+            if(iter == 0) {
                 if (verbose) {
                     printf("Iteration %d: error is %f\n", iter + 1, C);
                 }
+            }
             else {
                 total_time += (float) (end - start) / CLOCKS_PER_SEC;
                 if (verbose) {

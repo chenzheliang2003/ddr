@@ -26,7 +26,7 @@ public:
 
     double get_explained() const;
 
-private:
+protected:
     SVDOption svd_option;
     Eigen::RowVectorXd mean;
     Eigen::MatrixXd components;
