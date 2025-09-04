@@ -1,4 +1,4 @@
-#include "interface.hpp"
+#include "ddrplugin.hpp"
 
 static bexfun_info_t function_list[]=
 {

@@ -68,42 +68,38 @@ namespace baltam {
 
     template <class T>
     const T * bxGetExtObjRO(const bxArray * in){
-        const extern_obj_base* ptr = static_cast<const extern_obj_base*>(bxGetExtObjRO_impl(in));
-        if (ptr == nullptr || ptr->sid != T::ID) {
+        const void * ptr = bxGetExtObjRO_impl(in);
+        if (ptr == nullptr)
             return nullptr;
-        } else {
-            return static_cast<const T*>(ptr);
-        }
+
+        return dynamic_cast<const T*>(static_cast<const extern_obj_base*>(ptr));
     }
 
     template <class T>
     T * bxGetExtObjRW(bxArray * in){
-        extern_obj_base* ptr = static_cast<extern_obj_base*>(bxGetExtObjRW_impl(in));
-        if (ptr == nullptr || ptr->sid != T::ID) {
+        void * ptr = bxGetExtObjRW_impl(in);
+        if (ptr == nullptr)
             return nullptr;
-        } else {
-            return static_cast<T*>(ptr);
-        }
+
+        return dynamic_cast<T*>(static_cast<extern_obj_base*>(ptr));
     }
 
     template <class T>
     T * bxGetExtObj(const bxArray* in){
-        extern_obj_base* ptr = static_cast<extern_obj_base*>(bxGetExtObj_impl(in));
-        if (ptr == nullptr || ptr->sid != T::ID) {
+        void * ptr = bxGetExtObj_impl(in);
+        if (ptr == nullptr)
             return nullptr;
-        } else {
-            return static_cast<T*>(ptr);
-        }
+
+        return dynamic_cast<T*>(static_cast<extern_obj_base*>(ptr));
     }
 
     template <class T>
     T * bxGetExtObj(const bxArray* in, bxGetExtObj_impl_t impl){
-        extern_obj_base* ptr = static_cast<extern_obj_base*>(impl(in));
-        if (ptr == nullptr || ptr->sid != T::ID) {
+        void * ptr = impl(in);
+        if (ptr == nullptr)
             return nullptr;
-        } else {
-            return static_cast<T*>(ptr);
-        }
+
+        return dynamic_cast<T*>(static_cast<extern_obj_base*>(ptr));
     }
 
 }
