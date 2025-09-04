@@ -29,6 +29,7 @@ endif()
 
 find_package(OpenBLAS REQUIRED)
 find_package(Eigen3 REQUIRED)
+find_package(Armadillo REQUIRED)
 
 enable_testing()
 

@@ -16,25 +16,12 @@ BEX_EXPORT int bxPluginFini();
 }
 #endif
 
-class bxPCA:public PCA,public baltam::extern_obj_base
-{
-public:
-    bxPCA(const PCA &object);
-
-    baltam::extern_obj_base *dup() const override;
-
-    std::string classname() const override;
-
-    std::string to_string() const override;
-
-public:
-    static int ID;
-};
-
 void pca(int nlhs,bxArray *plhs[],int nrhs,const bxArray *prhs[]);
 
-void pcarec(int nlhs,bxArray *plhs[],int nrhs,const bxArray *prhs[]);
+void kpca(int nlhs,bxArray *plhs[],int nrhs,const bxArray *prhs[]);
 
 void tsne(int nlhs,bxArray *plhs[],int nrhs,const bxArray *prhs[]);
 
 void umap(int nlhs,bxArray *plhs[],int nrhs,const bxArray *prhs[]);
+
+void mnf(int nlhs,bxArray *plhs[],int nrhs,const bxArray *prhs[]);

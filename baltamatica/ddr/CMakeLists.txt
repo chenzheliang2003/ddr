@@ -27,4 +27,5 @@ target_include_directories(${TARGET_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc
 
 target_link_libraries(${TARGET_NAME} PUBLIC
     modules
-    bex)
+    bex
+    ${ARMADILLO_LIBRARIES})
