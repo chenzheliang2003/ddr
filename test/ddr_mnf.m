@@ -2,7 +2,7 @@ load mnist.mat;
 test.images = test.images(:, :, 1:2000);
 [nrow, ncol, nsamples] = size(test.images);
 X = reshape(test.images, nrow*ncol, nsamples)';
-[W, H] = ddr::mnf(X,20);
+[W, H] = mnf_plugin(X,20);
 reconstructionError = norm(X - W*H, 'fro');
 fprintf('重构误差: %.6f\n', reconstructionError);
 

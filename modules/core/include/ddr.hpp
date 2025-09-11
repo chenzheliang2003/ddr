@@ -1,4 +1,4 @@
 #include "pca.hpp"
-#include "tsne.h"
-#include "rw.hpp"
+#include "qdtsne/qdtsne.hpp"
 #include "umappp/umappp.hpp"
+#include "rw.hpp"

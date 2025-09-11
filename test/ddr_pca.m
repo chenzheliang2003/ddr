@@ -8,7 +8,7 @@ X = reshape(test.images, nrow*ncol, nsamples)';
 
 %% PCA 测试
 r = 20;  % 输出维度
-[Y_pca, eigVals_pca] = ddr::pca(X, r);
+[Y_pca, eigVals_pca] = pca_plugin(X, r);
 
 % 重构数据（近似）: X ≈ Y * V'
 reconstruction_pca = Y_pca * Y_pca' * X;
@@ -18,7 +18,7 @@ fprintf('PCA 重构误差: %.6f\n', reconstructionError_pca);
 %% KPCA 测试
 kernelType = 'rbf';
 param = 1.0;   % sigma
-[Y_kpca, eigVals_kpca] = ddr::kpca(X, r, kernelType, param);
+[Y_kpca, eigVals_kpca] = kpca_plugin(X, r, kernelType, param);
 
 projectionError_kpca = norm(Y_kpca, 'fro');
 fprintf('KPCA 投影 norm: %.6f\n', projectionError_kpca);
