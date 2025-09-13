@@ -123,7 +123,7 @@ public:
         return my_neighbors.size(); // safety of the cast to Index_ is already checked in the constructor.
     }
 
-#ifndef NDEBUG
+// #ifndef NDEBUG
     /**
      * @cond
      */
@@ -133,7 +133,7 @@ public:
     /**
      * @endcond
      */
-#endif
+// #endif
 
 public:
     /**
