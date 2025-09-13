@@ -32,7 +32,6 @@ find_package(Armadillo REQUIRED)
 
 enable_testing()
 
-
 add_subdirectory(modules)
 add_subdirectory(baltamatica)
 
